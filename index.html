@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>city</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<!-- the top picture with logo part -->
+	<header>
+		<div><a href="#"><img src="img/head1.png" alt="home icon"/></a></div>
+		<div><img src="img/head2.png" alt="" /></div>
+	</header>
+	<!-- the middle part -->
+	<section>
+		<!-- navigation part -->
+		<nav>
+			<ul>
+				<li><a href="">Business</a></li>
+				<li><a href="">Residents</a></li>
+				<li><a href="">Visitors</a></li>
+				<li><a href="">Gvernment</a></li>
+				<li><a href="">Quick Links</a></li>
+			</ul>
+		</nav>
+		<!-- the search box part -->
+		<div class="search">
+			<div>Powered by <img src="img/google.jpg" alt=""></div>
+			<form>
+				<input type="text">
+				<i class="fas fa-search"></i>
+			</form>
+		</div>
+		<!-- the slide part -->
+		<div class="slides">
+			<ul>
+				<li class="active"><img src="img/img/1.jpg" alt=""></li>
+				<li><img src="img/2.jpg" alt=""></li>
+				<li><img src="img/3.jpg" alt=""></li>
+				<li><img src="img/4.jpg" alt=""></li>
+				<li><img src="img/5.jpg" alt=""></li>
+				<li><img src="img/6.jpg" alt=""></li>
+				<li><img src="img/7.jpg" alt=""></li>
+				<li><img src="img/8.jpg" alt=""></li>
+				<li><img src="img/9.jpg" alt=""></li>
+			</ul>
+		</div>
+		<!-- picture + contents part -->
+		<div class="contents">
+			<img src="img/welcome.jpg" alt="">
+			<p>Hays Kansas is the largest city in Northwest Kansas at the crossroads of Interstate 70 and US Highway 183.  This city, which has approximately 21,038 residents, was incorporated in 1885.  Hays is a growing city with excellent opportunities. Please <a>click here</a> to view more information about the City's history.</p>
+			<a><img src="img/hours.jpg" alt=""></a>
+			<div><span>Monday – Thursday</span><span>7:30 a.m. – 5:30 p.m.</span></div>
+			<div><span>Friday</span><span>7:30 a.m. – 11:30 a.m</span></div>
+		</div>
+		<!-- the second navigation part -->
+		<div class="links">
+			<ul>
+				<li><a>How Do I... </a></li>
+				<li><a>City Comission</a></li>
+				<li><a>Birds/RFPs</a></li>
+				<li><a>City Ordinances</a></li>
+				<li><a>Comments</a></li>
+				<li><a>Contat Us</a></li>
+				<li><a>Departments</a></li>
+				<li><a>Employment</a></li>
+				<li><a>Planing/Zoning</a></li>
+			</ul>
+		</div>
+	</section>
+	<!-- footer part -->
+	<footer>
+		<ul>
+			<li><a href="">Business</a></li>
+			<li><a href="">Residents</a></li>
+			<li><a href="">Visitors</a></li>
+			<li><a href="">Gvernment</a></li>
+			<li><a href="">Quick Links</a></li>
+		</ul>
+		<span>Created By Yuxia Niu</span>
+	</footer>
+	
+</body>
+<script>
+
+	function changeLi(){
+		// get first element with active class
+		$active = $('.slides ul li.active');
+		// get next element of the active one. if the next is the last one, change to the first element
+		$next = $active.next().length>0 ? $active.next() : $('.slides ul li:first');
+		//active element fade out, next element fade in
+		$active.fadeOut(1000,function(){
+			$active.removeClass('active');
+			$next.fadeIn(1000).addClass('active');
+		})
+	}
+	
+
+$(document).ready(function(){
+      // change slides every 2 seconds
+      setInterval('changeLi()', 2000);
+    })
+	
+
+</script>
+</html>
